@@ -1,0 +1,10 @@
+C:\Users\Administrator\source\repos\BannerProjectVer1\BannerProjectVer1\bin\Debug\BannerProjectVer1.exe.config
+C:\Users\Administrator\source\repos\BannerProjectVer1\BannerProjectVer1\bin\Debug\BannerProjectVer1.exe
+C:\Users\Administrator\source\repos\BannerProjectVer1\BannerProjectVer1\bin\Debug\BannerProjectVer1.pdb
+C:\Users\Administrator\source\repos\BannerProjectVer1\BannerProjectVer1\obj\Debug\BannerProjectVer1.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\BannerProjectVer1\BannerProjectVer1\obj\Debug\BannerProjectVer1.Form1.resources
+C:\Users\Administrator\source\repos\BannerProjectVer1\BannerProjectVer1\obj\Debug\BannerProjectVer1.Properties.Resources.resources
+C:\Users\Administrator\source\repos\BannerProjectVer1\BannerProjectVer1\obj\Debug\BannerProjectVer1.csproj.GenerateResource.cache
+C:\Users\Administrator\source\repos\BannerProjectVer1\BannerProjectVer1\obj\Debug\BannerProjectVer1.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\BannerProjectVer1\BannerProjectVer1\obj\Debug\BannerProjectVer1.exe
+C:\Users\Administrator\source\repos\BannerProjectVer1\BannerProjectVer1\obj\Debug\BannerProjectVer1.pdb
