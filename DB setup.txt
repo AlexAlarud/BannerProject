@@ -1,0 +1,55 @@
+CREATE TABLE Category
+(
+categoryID int IDENTITY(1,1), --auto incremet for sql server
+categoryName VARCHAR(50) NOT NULL,
+CONSTRAINT category_pk PRIMARY KEY(categoryID)
+)
+
+CREATE TABLE Color
+(
+colorID VARCHAR(5),
+colorName VARCHAR(20),
+CONSTRAINT color_pk PRIMARY KEY(colorID)
+)
+
+CREATE TABLE Pattern
+(
+patternID VARCHAR(5),
+patternName VARCHAR(50), 
+patternPicture VARCHAR(100)
+CONSTRAINT pattern_pk PRIMARY KEY(patternID)
+)
+
+CREATE TABLE Banner
+(
+bannerID int IDENTITY(1,1), --auto incremet for sql server
+bannerName VARCHAR(50) NOT NULL,
+bannerPicture VARCHAR(100),
+bannerCommand VARCHAR(1000),
+bannerColorID VARCHAR(5),
+primaryBannerCategory int,
+CONSTRAINT banner_pk PRIMARY KEY(bannerID),
+CONSTRAINT banner_color_fk FOREIGN KEY(bannerColorID) REFERENCES Color(colorID),
+CONSTRAINT bannerPrimary_category_fk FOREIGN KEY(primaryBannerCategory) REFERENCES Category(categoryID)
+)
+
+CREATE TABLE SecondaryBannerCategory
+(
+bannerID int,
+categoryID int,
+CONSTRAINT bannerCategory_pk PRIMARY KEY(bannerID, categoryID),
+CONSTRAINT bannerCategory_banner_fk FOREIGN KEY(bannerID) REFERENCES Banner(bannerID)  ON DELETE CASCADE, --so if a banner is deleted its record about secondaryCategory should also be deleted
+CONSTRAINT bannerCategory_category_fk FOREIGN KEY(categoryID) REFERENCES Category(categoryID)   ON DELETE CASCADE, --so if a catecory is deleted its record about secondaryCategory should also be deleted
+)
+
+CREATE TABLE BannerPatternStep
+(
+bannerID int,
+stepNumber int,
+colorID VARCHAR(5) NOT NULL,
+patternID VARCHAR(5) NOT NULL, --not null because they are a must but not PK
+CONSTRAINT bannerPatternStep_pk PRIMARY KEY(bannerID, stepNumber),
+CONSTRAINT bannerPatternStep_banner_fk FOREIGN KEY(bannerID) REFERENCES Banner(bannerID) ON DELETE CASCADE, --so if a banner is deleted its steps should also be deleted
+CONSTRAINT bannerPatternStep_color_fk FOREIGN KEY(colorID) REFERENCES Color(colorID),
+CONSTRAINT bannerPatternStep_pattern_fk FOREIGN KEY(patternID) REFERENCES Pattern(patternID),
+)
